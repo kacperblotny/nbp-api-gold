@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://kblotny:kblotny@nbpcluster.e1fjfyn.mongodb.net/nbp?retryWrites=true&w=majority&appName=nbpcluster"
+}
