@@ -11,7 +11,6 @@ const app = express()
 app.use(cors())
 
 const PORT = process.env.PORT || 5002
-console.log('test')
 
 app.get('/', (req, res) => {
   res.send(`api running on port ${PORT}`)
