@@ -13,6 +13,9 @@ const GoldPricesChart = () => {
         }
         const jsonData = await response.json()
         setChartData(jsonData)
+        console.log('first')
+
+        console.log(chartData)
       } catch (error) {
         console.error('There was an error fetching the gold prices!', error)
       }

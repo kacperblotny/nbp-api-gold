@@ -36,7 +36,7 @@ def fetch_all_data():
             data = fetch_gold_data(date_str)
             if data:
                 for record in data:
-                    # Convert date string to datetime object
+                    # convert date string to datetime object
                     record['data'] = datetime.strptime(record['data'], "%Y-%m-%d")
                 new_data.extend(data)
             else:

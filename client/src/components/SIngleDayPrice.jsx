@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function SingleDayPrice() {
   const [data, setData] = useState([])
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('2013-01-02')
 
   const handleChange = (event) => {
     setInputValue(event.target.value)
@@ -28,7 +28,7 @@ function SingleDayPrice() {
         setData(jsonData)
         console.log(data)
       } catch (error) {
-        setData({ cena: 'There is not price for this date' })
+        setData({ cena: 'There is no price for this date' })
         console.error('There was an error fetching the gold prices!', error)
       }
     }
@@ -37,7 +37,7 @@ function SingleDayPrice() {
   }, [inputValue])
 
   return (
-    <div className='py-16'>
+    <div className='py-16 px-8'>
       <p className='text-xl'>
         Sprawdź cenę złota dla danego dnia, date podaj w formacie YYYY-MM-DD
       </p>

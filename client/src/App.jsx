@@ -1,5 +1,6 @@
 import GoldPricesChart from './components/GoldPricesChart'
 import SIngleDayPrice from './components/SIngleDayPrice'
+import DateRange from './components/DateRange'
 
 function App() {
   const testData = [
@@ -20,9 +21,10 @@ function App() {
     },
   ]
   return (
-    <div className='mx-4'>
+    <div className='px-4 container'>
       <GoldPricesChart />
       <SIngleDayPrice />
+      <DateRange />
       {/* <CreateChart dataForChart={testData} /> */}
     </div>
   )

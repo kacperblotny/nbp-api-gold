@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import Chart from 'chart.js/auto'
 import HighLowAvg from './HighLowAvg'
+import ExportButton from './ExportButton'
 
 const GoldPricesChart = ({ dataForChart }) => {
   const chartRef = useRef(null)
@@ -71,16 +72,28 @@ const GoldPricesChart = ({ dataForChart }) => {
     }
   }, [dataForChart])
 
+  const downloadChart = () => {
+    const link = document.createElement('a')
+    link.download = 'chart.png'
+    link.href = chartInstance.current.toBase64Image()
+    link.click()
+  }
+
   return (
-    <div className='w-screen'>
+    <div className='w-[90vw] px-8'>
       <div>
         <HighLowAvg data={dataForChart} />
       </div>
+
       {dataForChart.length === 0 ? (
         <div>Loading...</div>
       ) : (
         <canvas ref={chartRef} />
       )}
+      <div>
+        <button onClick={downloadChart}>Download chart image</button>
+        <ExportButton data={dataForChart} />
+      </div>
     </div>
   )
 }
